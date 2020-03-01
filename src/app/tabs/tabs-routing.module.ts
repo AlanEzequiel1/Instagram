@@ -8,45 +8,60 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-          }
-        ]
-      },
-      {
-        path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-          }
-        ]
-      },
-      {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-          }
-        ]
-      },
-      {
         path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
+        children: [
+          {
+            path: 'Home',
+            loadChildren: () =>
+              import('../home/home.module').then(m => m.HomePageModule)
+          }
+        ]
+      },
+      {
+        path: 'Search',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../search/search.module').then(m => m.SearchPageModule)
+          }
+        ]
+      },
+      {
+        path: 'Direct',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../direct/direct.module').then(m => m.DirectPageModule)
+          }
+        ]
+      },
+      {
+        path: 'Gallery',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../gallery/gallery.module').then(m => m.GalleryPageModule)
+          }
+        ]
+      },
+      {
+        path: 'Profile',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../profile/profile.module').then(m => m.ProfilePageModule)
+          }
+        ]
+      },
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/Home',
     pathMatch: 'full'
   }
 ];
